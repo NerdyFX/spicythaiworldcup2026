@@ -11,6 +11,15 @@ interface Registration {
   eligible: boolean;
 }
 
+const TEAMS = [
+  'Argentina', 'Australia', 'Belgium', 'Brazil', 'Canada', 
+  'Colombia', 'Croatia', 'Denmark', 'Egypt', 'England', 
+  'France', 'Germany', 'Italy', 'Japan', 'Mexico', 
+  'Morocco', 'Netherlands', 'Nigeria', 'Portugal', 'Saudi Arabia', 
+  'Senegal', 'South Africa', 'South Korea', 'Spain', 'Switzerland', 
+  'Tunisia', 'Uruguay', 'USA'
+].sort();
+
 const LOGO_SRC = "/logo.png";
 const LOGO_FALLBACK = "https://img.icons8.com/color/96/thailand.png";
 
