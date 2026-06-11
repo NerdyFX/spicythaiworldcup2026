@@ -11,11 +11,11 @@
     "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
   },
   "dependencies": {
-    "body-parser": "^2.2.2",
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "mongoose": "^9.7.0",
-    "concurrently": "^10.0.3"
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1",
+    "concurrently": "^8.2.2"
   }
 }
