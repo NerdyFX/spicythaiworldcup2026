@@ -36,6 +36,8 @@ function App() {
   const [registrations, setRegistrations] = useState<Registration[]>([]);
   const [showCard, setShowCard] = useState<Registration | null>(null);
 
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
     fetchRegistrations();
   }, []);
@@ -43,10 +45,13 @@ function App() {
   const fetchRegistrations = async () => {
     try {
       const response = await fetch(`${API_BASE}/registrations`);
+      if (!response.ok) throw new Error('Failed to fetch from server');
       const data = await response.json();
-      setRegistrations(data.reverse());
+      setRegistrations(data); // Removed .reverse() as backend already sorts
+      setError(null);
     } catch (error) {
       console.error('Error fetching registrations:', error);
+      setError('Could not connect to the database. Please check your MongoDB connection.');
     }
   };
 
@@ -91,6 +96,12 @@ function App() {
         <h1><Trophy size={40} style={{ verticalAlign: 'middle', marginRight: '15px' }} /> World Cup Champion Guess</h1>
         <p>Register your guess! Spend over 1500 MZN to get your Digital Card.</p>
       </header>
+
+      {error && (
+        <div style={{ backgroundColor: '#fee2e2', color: '#dc2626', padding: '1rem', borderRadius: '8px', marginBottom: '2rem', textAlign: 'center', border: '1px solid #f87171' }}>
+          {error}
+        </div>
+      )}
 
       <div className="card">
         <form onSubmit={handleSubmit}>
