@@ -11,17 +11,6 @@ interface Registration {
   eligible: boolean;
 }
 
-const LOGO_URL = "https://scontent.fmpt1-1.fna.fbcdn.net/v/t39.30808-6/241219156_4243632555725735_7169824628285558451_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=fK_VzD8zR9QQ7kNvgE1iV4Q&_nc_oc=AdhO5X4QY8N4u6v1V4v1v1v1v1v1v1v1v1v1v1v1v1v1v1v1v1v1v1v1v1v1v1v&_nc_zt=23&_nc_ht=scontent.fmpt1-1.fna&_nc_gid=A1y1y1y1y1y1y1y1y1y1y1y&oh=00_AYC1y1y1y1y1y1y1y1y1y1y1y1y1y1y1y1y1y1y1y&oe=666B1Y1Y"; // Placeholder for the actual logo if the above expires
-
-const TEAMS = [
-  'Argentina', 'Australia', 'Belgium', 'Brazil', 'Canada', 
-  'Colombia', 'Croatia', 'Denmark', 'Egypt', 'England', 
-  'France', 'Germany', 'Italy', 'Japan', 'Mexico', 
-  'Morocco', 'Netherlands', 'Nigeria', 'Portugal', 'Saudi Arabia', 
-  'Senegal', 'South Africa', 'South Korea', 'Spain', 'Switzerland', 
-  'Tunisia', 'Uruguay', 'USA'
-].sort();
-
 const LOGO_SRC = "/logo.png";
 const LOGO_FALLBACK = "https://img.icons8.com/color/96/thailand.png";
 
