@@ -197,11 +197,11 @@ function App() {
       </div>
 
       {showCard && (
-        <div className="modal-overlay">
-          <div className="modal-content">
+        <div className="modal-overlay" onClick={() => setShowCard(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <span className="close-modal" onClick={() => setShowCard(null)}><X /></span>
-            <h2 style={{ color: 'var(--success)' }}>🎉 Congratulations!</h2>
-            <p>Customer is eligible for the Digital Guess Card.</p>
+            <h2 style={{ color: 'var(--success)', marginBottom: '10px' }}>🎉 Congratulations!</h2>
+            <p style={{ marginBottom: '20px' }}>Customer is eligible for the Digital Guess Card.</p>
             
             <div className="digital-card">
               <div className="card-header">
@@ -209,7 +209,7 @@ function App() {
                   <img 
                     src={LOGO_SRC} 
                     alt="Logo" 
-                    style={{ height: '40px', borderRadius: '50%', backgroundColor: 'white', padding: '2px' }} 
+                    style={{ height: '40px', width: '40px', borderRadius: '50%', backgroundColor: 'white', padding: '2px', objectFit: 'cover' }} 
                     onError={(e) => e.currentTarget.src = LOGO_FALLBACK}
                   />
                   <span className="card-title">World Cup 2026</span>
@@ -217,17 +217,17 @@ function App() {
                 <Trophy size={24} color="white" />
               </div>
               <div className="card-body">
-                <div className="customer-name">{showCard.name}</div>
-                <div style={{ fontSize: '0.9rem', marginBottom: '10px' }}>{showCard.phone}</div>
-                <div className="predicted-team">{showCard.team}</div>
+                <div className="customer-name">{showCard.name || 'Guest'}</div>
+                <div style={{ fontSize: '0.9rem', marginBottom: '10px', fontWeight: 'bold' }}>{showCard.phone || 'N/A'}</div>
+                <div className="predicted-team">{showCard.team || 'None'}</div>
               </div>
               <div className="card-footer">
                 <span>Spicy Thai Guest Card</span>
-                <span>ID: {showCard.id.toString().slice(-6)}</span>
+                <span>ID: {showCard.id ? showCard.id.toString().slice(-6) : '000000'}</span>
               </div>
             </div>
 
-            <button onClick={() => setShowCard(null)} style={{ marginTop: '20px' }}>Done</button>
+            <button onClick={() => setShowCard(null)} style={{ marginTop: '20px', width: '100%' }}>Done</button>
           </div>
         </div>
       )}
