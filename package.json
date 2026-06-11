@@ -1,8 +1,8 @@
 {
   "name": "world-cup-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Spicy Thai World Cup Registration App",
+  "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
     "build": "cd frontend && npm install && npm run build",
@@ -10,11 +10,12 @@
     "start:frontend": "cd frontend && npm run dev -- --host",
     "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.7.0",
     "concurrently": "^10.0.3"
   }
 }
