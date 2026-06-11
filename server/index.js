@@ -11,10 +11,19 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/worldcup';
-mongoose.connect(MONGODB_URI)
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error('MongoDB connection error:', err));
+const MONGODB_URI = process.env.MONGODB_URI;
+
+if (!MONGODB_URI) {
+    console.error('CRITICAL: MONGODB_URI environment variable is NOT set!');
+} else {
+    console.log('MONGODB_URI is detected. Attempting to connect...');
+}
+
+mongoose.connect(MONGODB_URI || 'mongodb://localhost:27017/worldcup')
+    .then(() => console.log('Successfully connected to MongoDB Atlas'))
+    .catch(err => {
+        console.error('MongoDB connection error details:', err.message);
+    });
 
 // Registration Schema
 const registrationSchema = new mongoose.Schema({

@@ -45,13 +45,16 @@ function App() {
   const fetchRegistrations = async () => {
     try {
       const response = await fetch(`${API_BASE}/registrations`);
-      if (!response.ok) throw new Error('Failed to fetch from server');
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Server error');
+      }
       const data = await response.json();
-      setRegistrations(data); // Removed .reverse() as backend already sorts
+      setRegistrations(data);
       setError(null);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error fetching registrations:', error);
-      setError('Could not connect to the database. Please check your MongoDB connection.');
+      setError(`Database Error: ${error.message}`);
     }
   };
 
