@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1781177141038,
+    "name": "Surachai",
+    "amount": 1800,
+    "team": "Portugal",
+    "date": "2026-06-11T11:25:41.038Z",
+    "eligible": true
+  },
+  {
+    "id": 1781177326741,
+    "name": "Aimmy",
+    "amount": 1600,
+    "team": "Brazil",
+    "date": "2026-06-11T11:28:46.742Z",
+    "eligible": true
+  },
+  {
+    "id": 1781177473658,
+    "name": "Danial ",
+    "amount": 1800,
+    "team": "Canada",
+    "date": "2026-06-11T11:31:13.658Z",
+    "eligible": true
+  },
+  {
+    "id": 1781177598201,
+    "name": "joao",
+    "amount": 1600,
+    "team": "Belgium",
+    "date": "2026-06-11T11:33:18.201Z",
+    "eligible": true
+  },
+  {
+    "id": 1781179449837,
+    "name": "Raquel",
+    "amount": 1800,
+    "team": "Brazil",
+    "date": "2026-06-11T12:04:09.837Z",
+    "eligible": true
+  }
+]

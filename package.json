@@ -1,0 +1,20 @@
+{
+  "name": "world-cup-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd frontend && npm install && npm run build",
+    "start:backend": "node server/index.js",
+    "start:frontend": "cd frontend && npm run dev -- --host",
+    "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
